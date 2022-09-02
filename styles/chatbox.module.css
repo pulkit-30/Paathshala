@@ -1,0 +1,25 @@
+.chatbox_main_section {
+  width: 60%;
+  position: relative;
+  min-height: 100vh;
+}
+.chat_box {
+  width: auto;
+  height: 80.5vh;
+  overflow-y: scroll;
+}
+.msg_box {
+  min-height: 10vh;
+}
+@media screen and (max-width: 1000px) {
+  .chatbox_main_section {
+    width: 80%;
+    margin: auto;
+  }
+}
+
+@media screen and (max-width: 700px) {
+  .chatbox_main_section {
+    width: 100%;
+  }
+}

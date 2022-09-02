@@ -1,0 +1,21 @@
+.article_main_section {
+  width: 60%;
+  position: relative;
+  min-height: 100vh;
+}
+.article_main_section img {
+  max-width: 100%;
+  margin: 10px auto;
+}
+@media screen and (max-width: 1000px) {
+  .article_main_section {
+    width: 80%;
+    margin: auto;
+  }
+}
+
+@media screen and (max-width: 700px) {
+  .article_main_section {
+    width: 100%;
+  }
+}

@@ -1,0 +1,36 @@
+/* utilities className */
+.flex {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.f-column {
+  flex-direction: column !important;
+}
+.f-row {
+  flex-direction: row !important;
+}
+.f-space-btw {
+  justify-content: space-between;
+}
+.f-space-eve {
+  justify-content: space-evenly !important;
+}
+.f-start {
+  align-items: flex-start;
+  justify-content: flex-start !important;
+}
+.f-end {
+  align-items: flex-end;
+  justify-content: flex-end !important;
+}
+
+/* height */
+.min-h-100vh {
+  min-height: 100vh;
+}
+/* width */
+.w-100 {
+  width: 100%;
+  /* background-color: antiquewhite; */
+}

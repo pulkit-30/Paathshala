@@ -1,0 +1,32 @@
+.notification_main_section {
+  width: 60%;
+  position: relative;
+  min-height: 100vh;
+}
+.Notification_box {
+  padding: 0px 20px !important;
+  width: 100%;
+  margin: 10px auto !important;
+  align-items: flex-start !important;
+  border-bottom: 1px solid var(--hover-color) !important;
+}
+.user_info {
+  width: 70%;
+}
+.notification_statement {
+  width: 100%;
+  padding: 10px 0px;
+  text-align: left;
+}
+@media screen and (max-width: 1000px) {
+  .notification_main_section {
+    width: 80%;
+    margin: auto;
+  }
+}
+
+@media screen and (max-width: 700px) {
+  .notification_main_section {
+    width: 100%;
+  }
+}

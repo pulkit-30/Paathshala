@@ -1,0 +1,47 @@
+.FormBox {
+  border-radius: 5px;
+  overflow: hidden;
+}
+.form {
+  /* min-height: 50vh !important; */
+  width: 30rem;
+  padding: 10px 0px;
+}
+.inputField {
+  width: 80% !important;
+  margin: 10px auto !important;
+}
+.btn {
+  font-size: 15px;
+  height: 50px !important;
+}
+
+@media screen and (max-width: 1366px) {
+  .form {
+    width: 18rem;
+  }
+}
+
+@media screen and (max-width: 1000px) {
+  .form {
+    width: 30rem;
+    flex-direction: column;
+  }
+  .FormBox {
+    width: 90%;
+    height: 80vh;
+    flex-direction: column-reverse;
+  }
+}
+
+@media screen and (max-width: 517px) {
+  .form {
+    width: 100%;
+    flex-direction: column;
+  }
+  .FormBox {
+    width: 80%;
+    height: 80vh;
+    flex-direction: column-reverse;
+  }
+}

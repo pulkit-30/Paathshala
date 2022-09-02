@@ -1,0 +1,16 @@
+.user_profile_section {
+  width: 60%;
+  position: relative;
+  min-height: 100vh;
+}
+.profile_details {
+  margin-top: -40px;
+  padding-bottom: 20px;
+}
+
+@media screen and (max-width: 1000px) {
+  .user_profile_section {
+    width: 100%;
+    margin: auto;
+  }
+}

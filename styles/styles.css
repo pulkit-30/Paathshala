@@ -1,0 +1,132 @@
+.main_sidebar {
+  position: sticky;
+  top: 0;
+  left: 0;
+  width: 25%;
+  /* background-color: aquamarine; */
+  min-height: 100vh;
+  height: 100vh;
+  overflow: auto;
+  border-right: 1px solid var(--ternary-color);
+}
+
+.main_content_section {
+  position: relative;
+  width: 70%;
+  min-height: 100vh;
+}
+
+.main-btn {
+  padding: 10px 0px;
+  width: 80%;
+  margin: auto;
+}
+.main-sidebar-logo {
+  margin: 10px 0px;
+}
+
+/* activity section */
+
+.section_activity {
+  /* background-color: beige; */
+  /* padding: 0px 20px; */
+  width: 40%;
+  position: sticky;
+  top: 0;
+  left: 0;
+  border-left: 1px solid var(--ternary-color);
+  min-height: 100vh;
+}
+.activity_container {
+  width: 80%;
+  margin: 10px auto;
+  min-height: 100px;
+  border-radius: 5px;
+}
+.info {
+  cursor: pointer;
+  width: 95%;
+  height: 70px;
+  border-bottom: 1px solid var(--hover-color-dark);
+  padding: 7px;
+}
+.info:hover {
+  border-radius: 5px;
+  border-color: transparent;
+  background-color: var(--hover-color);
+}
+
+/* wallet container  */
+.wallet {
+  width: 84%;
+  transition: 0.1s;
+  margin-bottom: 10px;
+}
+.wallet:hover {
+  transform: scale(1.02);
+  box-shadow: 0px 0px 10px var(--hover-color);
+}
+.hamburger {
+  display: none !important;
+  position: absolute !important;
+  top: 1rem;
+  right: 20px;
+  color: var(--font-color) !important;
+}
+.display-sidebar-menu {
+  transform: translateX(0) !important;
+  opacity: 1 !important;
+}
+.activity-responsive-btn {
+  display: none !important;
+}
+@media screen and (max-width: 1220px) {
+  .section_activity {
+    width: 50%;
+  }
+}
+@media screen and (max-width: 1000px) {
+  .hamburger {
+    display: block !important;
+  }
+  .activity-responsive-btn {
+    display: block !important;
+    width: 100%;
+  }
+  .main_sidebar,
+  .section_activity {
+    transition: 0.2s;
+    padding-top: 50px;
+    position: fixed;
+    top: 0;
+    right: 0px;
+    left: unset;
+    background-color: var(--background-color);
+    width: 50vw;
+    z-index: 20;
+    /* display: none; */
+    transform: translateX(30rem);
+    opacity: 0;
+  }
+  .section_activity {
+    top: 0;
+    left: unset;
+    z-index: 30;
+  }
+
+  .main_content_section {
+    width: 75%;
+    padding-top: 80px;
+    margin: auto;
+  }
+}
+@media screen and (max-width: 700px) {
+  .main_sidebar,
+  .section_activity {
+    width: 80vw;
+  }
+  .main_content_section {
+    width: 100vw;
+    margin: auto;
+  }
+}

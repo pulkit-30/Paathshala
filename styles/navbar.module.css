@@ -1,0 +1,21 @@
+.navbar {
+  position: sticky;
+  top: 0;
+  width: 100%;
+  min-height: 50px;
+  border-radius: 0px;
+  z-index: 10;
+  border-bottom: 1px solid var(--quaternary-color);
+  align-items: center !important;
+  padding: 10px 0 !important;
+}
+
+@media screen and (max-width: 1000px) {
+  .navbar {
+    width: 100vw;
+    position: fixed;
+    top: 0;
+    left: 0;
+    margin-bottom: 50px;
+  }
+}

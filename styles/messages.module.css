@@ -1,0 +1,29 @@
+.messages_main_section {
+  width: 60%;
+  position: relative;
+  min-height: 100vh;
+}
+.msg_box {
+  width: 91%;
+  margin: 10px auto;
+  min-height: 100px;
+  border-radius: 5px;
+}
+
+.user_contacts {
+  max-height: 75vh;
+  overflow-y: scroll;
+}
+
+@media screen and (max-width: 1000px) {
+  .messages_main_section {
+    width: 80%;
+    margin: auto;
+  }
+}
+
+@media screen and (max-width: 700px) {
+  .messages_main_section {
+    width: 100%;
+  }
+}

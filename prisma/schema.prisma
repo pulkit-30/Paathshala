@@ -1,0 +1,114 @@
+generator client {
+  provider        = "prisma-client-js"
+  previewFeatures = ["referentialIntegrity"]
+}
+
+datasource db {
+  provider             = "mysql"
+  url                  = env("DATABASE_URL")
+  referentialIntegrity = "prisma"
+}
+
+model Account {
+  id                String  @id @default(cuid())
+  userId            String
+  type              String
+  provider          String
+  providerAccountId String
+  refresh_token     String? @db.Text
+  access_token      String? @db.Text
+  expires_at        Int?
+  token_type        String?
+  scope             String?
+  id_token          String? @db.Text
+  session_state     String?
+  refresh_token_expires_in Int?
+
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@unique([provider, providerAccountId])
+}
+
+model Session {
+  id           String   @id @default(cuid())
+  sessionToken String   @unique
+  userId       String
+  expires      DateTime
+  role           String? @default("student")
+  user         User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+}
+
+model User {
+  id             String    @id @default(cuid())
+  name           String?
+  slug           String?   @unique
+  email          String?   @unique
+  emailVerified  DateTime?
+  password       String?
+  image          String?
+  accounts       Account[]
+  sessions       Session[]
+  interactions   Interaction[]
+  posts          Post[]
+  comments       Comment[]
+  replies        Reply[]
+  doubts         Doubt[]
+  points         Int       @default(100)
+  role           String? @default("student")
+}
+
+model Post {
+  id             String    @id @default(cuid())
+  author         User     @relation(fields: [authorEmail], references: [email])
+  content        String
+  image          String?
+  createdAt      DateTime @default(now())
+  authorEmail    String
+  comments       Comment[]
+}
+
+model Doubt {
+  id             String    @id @default(cuid())
+  author         User     @relation(fields: [authorEmail], references: [email])
+  image          String?
+  createdAt      DateTime @default(now())
+  authorEmail    String
+  replies        Reply[]
+}
+
+model Reply {
+  id             String    @id @default(cuid())
+  replyby         User     @relation(fields: [replybyEmail], references: [email])
+  doubtid          String
+  createdAt      DateTime @default(now())
+  replybyEmail    String
+  onDoubt         Doubt @relation(fields: [doubtid], references: [id])
+}
+
+model Comment {
+  id             String    @id @default(cuid())
+  commentby         User     @relation(fields: [commentbyEmail], references: [email])
+  postid          String
+  createdAt      DateTime @default(now())
+  commentbyEmail    String
+  onPost          Post @relation(fields: [postid], references: [id])
+}
+
+
+model Interaction {
+  id             String    @id @default(cuid())
+  student      User     @relation(fields: [studentEmail], references: [email])
+  status    String
+  scheduledAt DateTime
+  createdAt DateTime @default(now())
+  studentEmail String
+  mentorEmail String
+}
+
+model VerificationToken {
+  identifier String
+  token      String   @unique
+  expires    DateTime
+
+  @@unique([identifier, token])
+}

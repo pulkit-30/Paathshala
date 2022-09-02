@@ -1,0 +1,30 @@
+/* Search Box Styles */
+
+.form {
+  font-size: 15px;
+  width: 85%;
+  margin: 20px auto;
+  background: none;
+  background-color: #7f7f7f49;
+  border-radius: 45px;
+  overflow: hidden;
+}
+.searchBar {
+  outline: none;
+  font-size: 15px;
+  width: 75%;
+  background: none;
+  border: none;
+  height: 30px;
+  padding: 10px;
+  border-radius: 30px;
+}
+.searchBar:focus {
+  color: var(--font-color);
+}
+.IconButton {
+  margin: 0;
+  /* width: 20%; */
+  height: 100%;
+  color: var(--font-color) !important;
+}
