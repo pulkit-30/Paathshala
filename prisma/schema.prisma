@@ -69,6 +69,7 @@ model Post {
 model Doubt {
   id          String   @id @default(cuid())
   author      User     @relation(fields: [authorEmail], references: [email])
+  content     String
   image       String?
   createdAt   DateTime @default(now())
   authorEmail String
