@@ -1,12 +1,16 @@
-import { PrismaClient } from "@prisma/client";
+import { PrismaClient } from '@prisma/client';
 const prisma = new PrismaClient();
 
 export default async function handler(req, res) {
   // validate if it is a POST
+<<<<<<< Updated upstream
   if (req.method !== "POST") {
+=======
+  if (req.method !== 'POST') {
+>>>>>>> Stashed changes
     return res
       .status(200)
-      .json({ error: "This API call only accepts POST methods" });
+      .json({ error: 'This API call only accepts POST methods' });
   }
   const { role } = req.body;
 
@@ -15,13 +19,13 @@ export default async function handler(req, res) {
       role: `${role}`,
     },
     orderBy: {
-      points: "desc",
+      points: 'desc',
     },
   });
   if (!posts) {
     res.statusCode = 404;
 
-    res.send(JSON.stringify({ message: "Unable to retrieve" }));
+    res.send(JSON.stringify({ message: 'Unable to retrieve' }));
 
     return;
   }
