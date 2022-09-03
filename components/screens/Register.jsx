@@ -27,6 +27,7 @@ function RegisterBox() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [username, setUserName] = useState("");
+  const [phone, setPhone] = useState("");
   const [role, setRole] = React.useState("student");
 
   const registerUser = async (event) => {
@@ -37,6 +38,7 @@ function RegisterBox() {
       username,
       email,
       password,
+      phone,
     };
 
     axios
@@ -111,6 +113,21 @@ function RegisterBox() {
               variant="filled"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
+              className={style.inputField}
+              inputProps={{
+                style: { color: "var(--font-color)" },
+              }}
+              InputLabelProps={{
+                style: { color: "var(--font-color)" },
+              }}
+            />
+            <TextField
+              id="filled-basic"
+              type="phone"
+              label="Phone"
+              variant="filled"
+              value={phone}
+              onChange={(e) => setPhone(e.target.value)}
               className={style.inputField}
               inputProps={{
                 style: { color: "var(--font-color)" },
