@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@200&family=Mulish:wght@300&family=Poppins:wght@500&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@200&family=Mulish:wght@300&family=Poppins:wght@500&display=swap');
 
 :root {
   --primary-color: #1d9bf0;
@@ -9,14 +9,14 @@
   --background-color: #ffffff;
   --hover-color: #1d9cf00e;
   --hover-color-dark: #1d9cf044;
-  --primary-font: "Mulish", sans-serif;
-  --secondary-font: "Montserrat", sans-serif;
-  --heading-font: "Poppins", sans-serif;
+  --primary-font: 'Mulish', sans-serif;
+  --secondary-font: 'Montserrat', sans-serif;
+  --heading-font: 'Poppins', sans-serif;
 }
 
 .dark-mode {
   --font-color: #ffffff;
-  --background-color: #15202b;
+  --background-color: #161f2c;
   --quaternary-color: #e7e9ea;
 }
 

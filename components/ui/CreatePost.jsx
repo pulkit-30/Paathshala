@@ -70,13 +70,19 @@ const CreatePost = ({ tags }) => {
       authorEmail: session.user.email,
       image: imgUrl,
     };
-
     console.log(payload);
-    // sending backend request
-    axios
-      .post('/api/post', payload)
-      .then((res) => console.log(res))
-      .catch((err) => Message.ThrowMessage(err.message));
+    if (!tags) {
+      // sending backend request
+      axios
+        .post('/api/post', payload)
+        .then((res) => console.log(res))
+        .catch((err) => Message.ThrowMessage(err.message));
+    } else {
+      axios
+        .post('/api/doubts', payload)
+        .then((res) => console.log(res))
+        .catch((err) => console.log(err));
+    }
   };
 
   return (

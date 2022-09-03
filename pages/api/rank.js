@@ -3,11 +3,7 @@ const prisma = new PrismaClient();
 
 export default async function handler(req, res) {
   // validate if it is a POST
-<<<<<<< Updated upstream
-  if (req.method !== "POST") {
-=======
   if (req.method !== 'POST') {
->>>>>>> Stashed changes
     return res
       .status(200)
       .json({ error: 'This API call only accepts POST methods' });
