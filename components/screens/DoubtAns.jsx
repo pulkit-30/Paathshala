@@ -142,7 +142,17 @@ function DoubtAns() {
           })}
         </section>
         <section className='section_activity'>
-          <RecentActivity />
+          <RecentActivity>
+            <Button
+              variant='contained'
+              style={{
+                width: '85%',
+                margin: '10px auto',
+              }}
+            >
+              Subscribe
+            </Button>
+          </RecentActivity>
         </section>
       </div>
     </React.Fragment>

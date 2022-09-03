@@ -78,10 +78,11 @@ const CreatePost = ({ tags }) => {
         .then((res) => console.log(res))
         .catch((err) => Message.ThrowMessage(err.message));
     } else {
+      // send request to doubts backend route
       axios
         .post('/api/doubts', payload)
         .then((res) => console.log(res))
-        .catch((err) => console.log(err));
+        .catch((err) => Message.ThrowMessage(err.message));
     }
   };
 

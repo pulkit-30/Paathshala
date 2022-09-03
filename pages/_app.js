@@ -1,10 +1,10 @@
-import "../styles/globals.css";
-import "../styles/styles.css";
-import "../styles/utils.css";
-import { SessionProvider } from "next-auth/react";
-import MainSidebar from "../components/sidebar/MainSidebar";
-import MessageProvider from "../context/messages/MessageProvider";
-import ResponsiveDialog from "../components/dialog/Dialog";
+import '../styles/globals.css';
+import '../styles/styles.css';
+import '../styles/utils.css';
+import { SessionProvider } from 'next-auth/react';
+import MainSidebar from '../components/sidebar/MainSidebar';
+import MessageProvider from '../context/messages/MessageProvider';
+import ResponsiveDialog from '../components/dialog/Dialog';
 
 function MyApp({ Component, pageProps }) {
   return (
@@ -12,15 +12,15 @@ function MyApp({ Component, pageProps }) {
       <SessionProvider session={pageProps.session}>
         <ResponsiveDialog />
         <main
-          className="flex"
+          className='flex'
           style={{
-            alignItems: "flex-start",
+            alignItems: 'flex-start',
           }}
         >
-          <section className={"main_sidebar"}>
+          <section className={'main_sidebar'}>
             <MainSidebar />
           </section>
-          <section className="main_content_section">
+          <section className='main_content_section'>
             <Component {...pageProps} />
           </section>
         </main>
