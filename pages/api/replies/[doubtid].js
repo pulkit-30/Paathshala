@@ -1,4 +1,5 @@
 import { PrismaClient } from "@prisma/client";
+import axios from "axios";
 const prisma = new PrismaClient();
 
 export default async function handler(req, res) {
@@ -8,9 +9,9 @@ export default async function handler(req, res) {
     res.send(JSON.stringify({ message: "Use with a doubtid!" }));
   }
   if (req.method == "POST") {
-    const { replybyEmail } = req.body;
-    const newDoubt = await prisma.comment.create({
-      data: { doubtid, replybyEmail },
+    const { replybyEmail, content } = req.body;
+    const newDoubt = await prisma.reply.create({
+      data: { doubtid, replybyEmail, content },
     });
     if (!newDoubt) {
       res.statusCode = 404;
@@ -19,6 +20,28 @@ export default async function handler(req, res) {
 
       return;
     }
+    axios
+      .post("http://localhost:3000/api/userbyemail", {
+        email: replybyEmail,
+      })
+      .then(function (response) {
+        axios
+          .post("http://localhost:3000/api/mailuser", {
+            doubtid,
+            replycontent: content,
+            phone: response.phone,
+          })
+          .then(function (response) {
+            // console.log(response);
+          })
+          .catch(function (error) {
+            // console.log(error);
+          });
+      })
+      .catch(function (error) {
+        // console.log(error);
+      });
+
     res.json(newDoubt);
   }
   if (req.method == "GET") {

@@ -83,6 +83,7 @@ model Doubt {
 model Reply {
   id           String   @id @default(cuid())
   replyby      User     @relation(fields: [replybyEmail], references: [email])
+  content      String
   doubtid      String
   createdAt    DateTime @default(now())
   replybyEmail String
