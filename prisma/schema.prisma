@@ -48,17 +48,19 @@ model User {
   accounts      Account[]
   sessions      Session[]
   interactions  Interaction[]
-  posts         Post[]
+  posts         Post[] @relation(name: "posts")
+  subscribeddoubts Doubt[] @relation(name: "subscribeddoubts")
   comments      Comment[]
   replies       Reply[]
   doubts        Doubt[]
   points        Int           @default(100)
   role          String?       @default("student")
+  phone         String?
 }
 
 model Post {
   id          String    @id @default(cuid())
-  author      User      @relation(fields: [authorEmail], references: [email])
+  author      User      @relation("posts",fields: [authorEmail], references: [email])
   content     String
   image       String?
   createdAt   DateTime  @default(now())
@@ -74,6 +76,8 @@ model Doubt {
   createdAt   DateTime @default(now())
   authorEmail String
   replies     Reply[]
+  subscribedBy User?  @relation("subscribeddoubts",fields: [subscribedByEmail], references: [email])
+  subscribedByEmail String?
 }
 
 model Reply {
