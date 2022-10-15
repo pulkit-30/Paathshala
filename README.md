@@ -46,4 +46,5 @@ Mentees can connect to their mentors once they enter the ecosystem.
 [Pulkit Gupta](https://github.com/pulkit-30)
 [Mustafa Hasan Khan](https://github.com/mustafahasankhan)
 [Raj Chauhan](https://github.com/racky7)
+[Prerna Sharma](https://github.com/Prerna-0202)
 
